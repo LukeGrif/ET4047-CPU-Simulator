@@ -1,0 +1,114 @@
+/* ══ University of Limerick theme ═════════════════════════════════
+   Colours and header layout match the ET4047 Lab Documents site
+   (https://lukegrif.github.io/LAB-ET4047/). Loaded after the app
+   bundle CSS so these rules override the original grey palette. */
+:root {
+  --ul-green:        #165E3A;
+  --ul-modern-green: #3BB143;
+  --ul-light-green:  #e8f5ec;
+  --ul-white:        #ffffff;
+  --ul-grey:         #ddeee4;
+  --ul-text:         #0f3d22;
+  --ul-muted:        #5a7a66;
+}
+
+/* ══ HEADER ══════════════════════════════════════════════════════ */
+#ul-header {
+  position: relative;
+  z-index: 50;
+  border-bottom: 3px solid var(--ul-modern-green);
+  font-family: 'Syne', sans-serif;
+}
+#ul-header .header-top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--ul-white);
+  padding: 8px 28px;
+}
+#ul-header .ul-logo { height: 40px; width: auto; display: block; }
+#ul-header .ece-logo { height: 26px; width: auto; margin-left: auto; display: block; }
+#ul-header .header-nav {
+  background: var(--ul-green);
+  color: var(--ul-white);
+  padding: 8px 28px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+#ul-header .course { color: var(--ul-modern-green); }
+#ul-header .sep { color: rgba(255,255,255,0.4); }
+#ul-header .nav-links { margin-left: auto; display: flex; gap: 9px; flex-wrap: wrap; }
+#ul-header .nav-link {
+  color: var(--ul-white);
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.35);
+  padding: 4px 11px;
+  border-radius: 7px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  transition: background .14s ease, color .14s ease, border-color .14s ease;
+}
+#ul-header .nav-link:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: var(--ul-modern-green);
+  color: var(--ul-modern-green);
+}
+
+@media (max-width: 700px) {
+  #ul-header .header-top { padding: 6px 16px; gap: 12px; }
+  #ul-header .ul-logo { height: 32px; }
+  #ul-header .ece-logo { height: 20px; }
+  #ul-header .header-nav { padding: 6px 16px; font-size: 0.8rem; gap: 8px; }
+  #ul-header .nav-links { margin-left: 0; }
+}
+
+/* ══ SIMULATOR (index.html) ═════════════════════════════════════ */
+body.ul-app {
+  background: linear-gradient(180deg, var(--ul-grey) 0%, #c9e2d3 100%) fixed;
+  color: var(--ul-text);
+}
+/* CPU body */
+.ul-app .bg-gray-300 { background-color: var(--ul-light-green); }
+/* registers, ALU, MUX and other components */
+.ul-app .bg-gray-100 { background-color: var(--ul-white); }
+.ul-app .fill-gray-100 { fill: var(--ul-white); }
+/* RAM value cells */
+.ul-app .bg-gray-200 { background-color: #f4faf6; }
+/* control / option panels */
+.ul-app .bg-neutral-500 { background-color: var(--ul-green); }
+.ul-app .border-neutral-800 { border-color: #0b3a22; }
+.ul-app .text-gray-200 { color: var(--ul-white); }
+/* RAM "clear" button */
+.ul-app .bg-neutral-400 { background-color: var(--ul-grey); }
+/* active checkboxes */
+.ul-app .bg-\[\#0F0\] { background-color: var(--ul-modern-green); }
+/* buttons */
+.ul-app .hover\:bg-blue-700:hover,
+.ul-app .focus\:bg-blue-700:focus,
+.ul-app .hover\:bg-green-700:hover,
+.ul-app .focus\:bg-green-700:focus { background-color: var(--ul-green); }
+.ul-app .bg-blue-700, .ul-app .bg-green-500 { background-color: var(--ul-modern-green); }
+.ul-app .border-blue-700, .ul-app .border-green-700 { border-color: var(--ul-green); }
+.ul-app .text-blue-500, .ul-app .text-blue-700,
+.ul-app .hover\:text-blue-500:hover { color: var(--ul-green); }
+.ul-app .bg-lime-400 { background-color: var(--ul-modern-green); }
+.ul-app .border-l-blue-500 { border-left-color: var(--ul-modern-green); }
+
+/* ══ MANUAL (manual.html) ═══════════════════════════════════════ */
+body.ul-manual { background: var(--ul-light-green); color: var(--ul-text); }
+.ul-manual .bg-gray-100 { background-color: var(--ul-light-green); }
+.ul-manual .text-blue-500,
+.ul-manual .hover\:text-blue-500:hover { color: var(--ul-green); }
+.ul-manual .border-l-blue-500 { border-left-color: var(--ul-modern-green); }
+.ul-manual .border-gray-500 { border-color: #9cbfa9; }
+.ul-manual .border-t-gray-500 { border-top-color: #9cbfa9; }
+.ul-manual .border-b-gray-500 { border-bottom-color: #9cbfa9; }
+.ul-manual .bg-gray-200 { background-color: var(--ul-grey); }
+.ul-manual .hover\:bg-blue-700:hover,
+.ul-manual .focus\:bg-blue-700:focus { background-color: var(--ul-green); }
+.ul-manual .border-blue-700 { border-color: var(--ul-green); }
